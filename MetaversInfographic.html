@@ -1,1 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Technological Leaps in the Metaverse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-green: #39ff14;
+            --neon-blue: #04d9ff;
+            --neon-purple: #b026ff;
+            --bg-dark: #050505;
+            --card-bg: #111111;
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: #e0e0e0;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Rajdhani', sans-serif;
+            text-transform: uppercase;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--neon-green), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid #222;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(4, 217, 255, 0.1);
+            border-color: var(--neon-blue);
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            max-height: 400px;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--neon-green); }
+        
+        /* CSS-only Icons/Shapes (No SVG) */
+        .icon-circle {
+            width: 12px; height: 12px; border-radius: 50%;
+            display: inline-block; margin-right: 8px;
+        }
+        .bg-green { background-color: var(--neon-green); }
+        .bg-blue { background-color: var(--neon-blue); }
+        .bg-purple { background-color: var(--neon-purple); }
+    </style>
+    <!-- Palette: Vibrant Cyberpunk (Neon Green, Electric Blue, Deep Purple on Black) -->
+    <!-- Palette Name: Cyber Future -->
+</head>
+<body class="antialiased">
 
+    <!-- Header Section -->
+    <header class="w-full py-16 px-4 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600"></div>
+        <div class="max-w-4xl mx-auto">
+            <p class="text-sm font-bold tracking-[0.3em] text-gray-500 mb-4">BASED ON THE BOOK BY FARAMARZ KOWSARI</p>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                TECHNOLOGICAL <span class="gradient-text">LEAPS</span> IN THE METAVERSE
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto font-light">
+                Visualizing the transition from biological existence to a digitally sovereign, post-geographic human condition.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+
+        <!-- 1. Introduction Card (Full Width) -->
+        <div class="lg:col-span-12 card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4 text-white">The Ontological Shift</h2>
+                    <p class="text-lg text-gray-400 mb-6 leading-relaxed">
+                        The Metaverse is not merely a game or a VR chatroom. As detailed in the source material, it represents a fundamental shift in <strong>"Presence."</strong> We are moving away from viewing the internet on screens to inhabiting it as a persistent, synchronized reality. This infographic breaks down the 10 pillars of this transformation, from the <span class="text-green-400">Generative AI</span> that builds it to the <span class="text-blue-400">BCI</span> that connects us to it.
+                    </p>
+                    <div class="flex gap-4 text-sm font-mono text-gray-500">
+                        <span>&#9679; 10 Key Chapters</span>
+                        <span>&#9679; 3 Core Technologies</span>
+                        <span>&#9679; 1 Future Horizon</span>
+                    </div>
+                </div>
+                <div class="bg-black/50 rounded-2xl p-6 border border-white/5">
+                    <h3 class="text-xl mb-4 text-center">The Trinity of Convergence</h3>
+                    <div class="flex justify-between items-end h-40 gap-4">
+                        <div class="w-1/3 bg-gray-800 rounded-t-lg relative group h-full flex flex-col justify-end">
+                            <div class="w-full bg-gradient-to-t from-green-900 to-green-500 rounded-t-lg transition-all duration-1000" style="height: 85%;"></div>
+                            <span class="absolute bottom-2 left-0 w-full text-center font-bold text-white text-sm">AI<br><span class="text-[10px] text-gray-300 font-normal">Architect</span></span>
+                        </div>
+                        <div class="w-1/3 bg-gray-800 rounded-t-lg relative group h-full flex flex-col justify-end">
+                            <div class="w-full bg-gradient-to-t from-blue-900 to-blue-500 rounded-t-lg transition-all duration-1000" style="height: 65%;"></div>
+                            <span class="absolute bottom-2 left-0 w-full text-center font-bold text-white text-sm">BCI<br><span class="text-[10px] text-gray-300 font-normal">Interface</span></span>
+                        </div>
+                        <div class="w-1/3 bg-gray-800 rounded-t-lg relative group h-full flex flex-col justify-end">
+                            <div class="w-full bg-gradient-to-t from-purple-900 to-purple-500 rounded-t-lg transition-all duration-1000" style="height: 95%;"></div>
+                            <span class="absolute bottom-2 left-0 w-full text-center font-bold text-white text-sm">6G<br><span class="text-[10px] text-gray-300 font-normal">Network</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Radar Chart: Tech Impact (6 Columns) -->
+        <div class="lg:col-span-6 card rounded-3xl p-8 flex flex-col">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold mb-2 text-white">Technological Maturity & Impact</h2>
+                <p class="text-sm text-gray-400">
+                    Comparing the current state vs. the potential impact of key Metaverse technologies discussed in the book. <span class="text-green-400">Generative AI</span> is currently the most dominant force, while <span class="text-purple-400">BCI</span> holds the highest transformative potential for the future.
+                </p>
+            </div>
+            <div class="chart-container flex-grow">
+                <canvas id="techRadarChart"></canvas>
+            </div>
+        </div>
+
+        <!-- 3. Doughnut Chart: Key Challenges (6 Columns) -->
+        <div class="lg:col-span-6 card rounded-3xl p-8 flex flex-col">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold mb-2 text-white">Critical Challenges</h2>
+                <p class="text-sm text-gray-400">
+                    The transition to a digital existence is not without risk. The book highlights four primary areas of concern. <span class="text-red-400">Digital Ethics</span> and <span class="text-yellow-400">Mental Health</span> (Addiction/Dissociation) are paramount as immersion deepens.
+                </p>
+            </div>
+            <div class="chart-container flex-grow relative flex justify-center">
+                <canvas id="challengesChart"></canvas>
+                <!-- Center Text Overlay -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                    <span class="text-4xl font-bold text-white">4</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-500">Pillars</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Bar Chart: Economic Shift (8 Columns) -->
+        <div class="lg:col-span-8 card rounded-3xl p-8">
+            <div class="mb-6 flex justify-between items-end">
+                <div class="w-2/3">
+                    <h2 class="text-2xl font-bold mb-2 text-white">The Economic Paradigm Shift</h2>
+                    <p class="text-sm text-gray-400">
+                        Comparing the <strong>Web 2.0 (Rental)</strong> economy against the <strong>Metaverse (Ownership)</strong> economy. The shift is driven by NFTs, DAOs, and Smart Contracts, moving power from platforms to individuals.
+                    </p>
+                </div>
+                <div class="text-right">
+                    <span class="block text-3xl font-bold text-green-400">Trillions</span>
+                    <span class="text-xs text-gray-500 uppercase">Projected Market</span>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="economicBarChart"></canvas>
+            </div>
+        </div>
+
+        <!-- 5. Key Concept Cards (4 Columns) -->
+        <div class="lg:col-span-4 flex flex-col gap-6">
+            <div class="card rounded-2xl p-6 bg-gradient-to-br from-gray-900 to-black border-l-4 border-green-500">
+                <h3 class="text-lg font-bold text-green-400 mb-2">Fluid Identity</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Users transcend biological limits (age, race, gender). The "Proteus Effect" alters behavior based on avatar appearance, enabling radical self-expression.
+                </p>
+            </div>
+            <div class="card rounded-2xl p-6 bg-gradient-to-br from-gray-900 to-black border-l-4 border-blue-500">
+                <h3 class="text-lg font-bold text-blue-400 mb-2">Digital Sovereignty</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Moving from territorial law to algorithmic jurisdictions. "Code is Law," but it must be balanced with a Universal Declaration of Digital Human Rights.
+                </p>
+            </div>
+            <div class="card rounded-2xl p-6 bg-gradient-to-br from-gray-900 to-black border-l-4 border-purple-500">
+                <h3 class="text-lg font-bold text-purple-400 mb-2">Synthetic Art</h3>
+                <p class="text-sm text-gray-400 leading-relaxed">
+                    Art becomes an environment, not an object. 4D immersive narratives and generative aesthetics redefine creativity beyond physical constraints.
+                </p>
+            </div>
+        </div>
+
+        <!-- 6. Line Chart: Timeline (Full Width) -->
+        <div class="lg:col-span-12 card rounded-3xl p-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+                <div class="col-span-2">
+                    <h2 class="text-2xl font-bold mb-2 text-white">The Trajectory of Immersion</h2>
+                    <p class="text-sm text-gray-400">
+                        A projection of how key technologies (6G, BCI, AI) will converge over the next decade to achieve "Total Presence" and the "Transhumanist Horizon."
+                    </p>
+                </div>
+                <div class="flex items-center justify-end gap-6 text-right">
+                    <div>
+                        <div class="text-xs text-gray-500 uppercase">Current Phase</div>
+                        <div class="text-xl font-bold text-white">Augmented</div>
+                    </div>
+                    <div class="h-8 w-px bg-gray-700"></div>
+                    <div>
+                        <div class="text-xs text-gray-500 uppercase">Target Phase</div>
+                        <div class="text-xl font-bold text-green-400">Symbiotic</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chart-container">
+                <canvas id="timelineChart"></canvas>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-12 text-center">
+        <p class="text-gray-500 font-mono text-sm">
+            DATA SOURCE: "TECHNOLOGICAL LEAPS IN THE METAVERSE" &copy; 2022 FARAMARZ KOWSARI
+        </p>
+    </footer>
+
+    <!-- Chart Configuration -->
+    <script>
+        // Common Options for consistent styling
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: { color: '#a0a0a0', font: { family: 'Space Grotesk' } }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(20, 20, 20, 0.9)',
+                    titleColor: '#fff',
+                    bodyColor: '#ccc',
+                    borderColor: '#333',
+                    borderWidth: 1,
+                    padding: 10,
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            // Label Wrapping Logic (16 chars)
+                            if (typeof label === 'string' && label.length > 16) {
+                                return label.match(/.{1,16}(\s|$)/g);
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        // 1. Radar Chart: Tech Impact
+        const ctxRadar = document.getElementById('techRadarChart').getContext('2d');
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: ['Generative AI', '6G Networks', 'BCI (Neural)', 'Blockchain', 'Ext. Reality (XR)'],
+                datasets: [{
+                    label: 'Current Maturity (2025)',
+                    data: [90, 60, 40, 80, 75],
+                    backgroundColor: 'rgba(4, 217, 255, 0.2)',
+                    borderColor: '#04d9ff',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#04d9ff'
+                }, {
+                    label: 'Projected Impact (2035)',
+                    data: [95, 95, 100, 90, 95],
+                    backgroundColor: 'rgba(57, 255, 20, 0.2)',
+                    borderColor: '#39ff14',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#39ff14'
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    r: {
+                        grid: { color: '#333' },
+                        angleLines: { color: '#333' },
+                        pointLabels: { color: '#e0e0e0', font: { size: 12 } },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        // 2. Bar Chart: Economic Shift
+        const ctxBar = document.getElementById('economicBarChart').getContext('2d');
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['User Sovereignty', 'Asset Portability', 'Creator Revenue', 'Decentralization', 'Automated Trust'],
+                datasets: [{
+                    label: 'Web 2.0 (Traditional)',
+                    data: [20, 10, 30, 15, 10],
+                    backgroundColor: '#333',
+                    borderRadius: 4
+                }, {
+                    label: 'Metaverse (Web3)',
+                    data: [95, 90, 95, 85, 90],
+                    backgroundColor: '#b026ff', // Neon Purple
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: { grid: { color: '#222' }, ticks: { color: '#888' } },
+                    x: { grid: { display: false }, ticks: { color: '#ccc' } }
+                }
+            }
+        });
+
+        // 3. Doughnut Chart: Challenges
+        const ctxDoughnut = document.getElementById('challengesChart').getContext('2d');
+        new Chart(ctxDoughnut, {
+            type: 'doughnut',
+            data: {
+                labels: ['Digital Ethics & Privacy', 'Mental Health/Addiction', 'Energy Consumption', 'Legal Sovereignty'],
+                datasets: [{
+                    data: [35, 25, 20, 20],
+                    backgroundColor: ['#ff0055', '#ffaa00', '#04d9ff', '#39ff14'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                ...commonOptions,
+                cutout: '70%',
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: { position: 'bottom', labels: { color: '#aaa', padding: 20 } }
+                }
+            }
+        });
+
+        // 4. Line Chart: Timeline
+        const ctxLine = document.getElementById('timelineChart').getContext('2d');
+        new Chart(ctxLine, {
+            type: 'line',
+            data: {
+                labels: ['2022', '2024', '2026', '2028', '2030', '2032'],
+                datasets: [{
+                    label: 'Immersive Fidelity',
+                    data: [20, 35, 55, 75, 90, 98],
+                    borderColor: '#39ff14',
+                    backgroundColor: 'rgba(57, 255, 20, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                },
+                {
+                    label: 'Biological Integration',
+                    data: [5, 10, 25, 45, 70, 95],
+                    borderColor: '#04d9ff',
+                    borderDash: [5, 5],
+                    tension: 0.4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: { grid: { color: '#222' }, ticks: { color: '#888' } },
+                    x: { grid: { color: '#222' }, ticks: { color: '#ccc' } }
+                }
+            }
+        });
+    </script>
+    
+    <!-- NO SVG Graphics were used in HTML body (only icons simulated or text). 
+         NO Mermaid JS was used. 
+         Charts rendered via Canvas. 
+    -->
+</body>
+</html>
