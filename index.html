@@ -12,9 +12,15 @@
     <style>
         :root { --accent: #deff9a; --bg: #050505; --glass: rgba(255, 255, 255, 0.03); }
         * { scroll-behavior: smooth; box-sizing: border-box; }
-        body { background-color: var(--bg); color: #e5e7eb; font-family: 'Urbanist', 'Vazirmatn', sans-serif; overflow-x: hidden; }
+        body { 
+            background-color: var(--bg); 
+            color: #e5e7eb; 
+            font-family: 'Urbanist', 'Vazirmatn', sans-serif; 
+            overflow-x: hidden; 
+        }
         .glass-panel { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid rgba(222, 255, 154, 0.1); }
         .gradient-text { background: linear-gradient(135deg, #deff9a 0%, #a3e635 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
         .sidebar-link { transition: all 0.3s ease; }
         .sidebar-link.active { color: var(--accent); background: rgba(222, 255, 154, 0.05); }
         
@@ -22,13 +28,27 @@
         [dir="rtl"] .sidebar-link.active { border-right-color: var(--accent); }
         [dir="ltr"] .sidebar-link { border-left: 2px solid transparent; text-align: left; }
         [dir="ltr"] .sidebar-link.active { border-left-color: var(--accent); }
+        
+        .page-container {
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 2.2; 
+        }
+        
+        .paragraph-text { 
+            text-align: justify; 
+            margin-bottom: 2.5rem; 
+            font-weight: 300; 
+            font-size: 1.15rem;
+            color: #d1d5db;
+        }
 
-        .page-container { max-width: 850px; margin: 0 auto; line-height: 2.2; }
-        .paragraph-text { text-align: justify; margin-bottom: 2.5rem; font-weight: 300; font-size: 1.15rem; color: #d1d5db; }
         .mini-player { opacity: 0.7; transition: all 0.4s ease; }
         .mini-player:hover { opacity: 1; transform: scale(1.05); }
+        
         .loader { border: 2px solid #f3f3f3; border-top: 2px solid var(--accent); border-radius: 50%; width: 16px; height: 16px; animation: spin 1s linear infinite; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
         .custom-scroll::-webkit-scrollbar { width: 4px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
 
@@ -54,7 +74,7 @@
     <script type="text/babel">
         const { useState, useEffect, useRef } = React;
 
-        // --- SVG Icons ---
+        // --- SVG Components ---
         const IconDownload = () => <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="inline-block mx-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>;
         const IconPlay = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>;
         const IconPause = () => <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>;
@@ -91,15 +111,19 @@
                         "The second phase of this philosophical evolution centers on the temporal nature of digital existence and the spatialization of memory in 3D. In the physical world, time is a linear progression characterized by the irreversible decay of matter and the fading of events. In the Metaverse, every action is recorded in a persistent ledger, transforming the past into a navigable architectural space for everyone. This allows for a simultaneity of experience where multiple historical or speculative contexts can exist within a single synchronized environment. The human relationship with the moment is thus fundamentally altered, moving from a transient occurrence to a persistent data point. Such a shift requires a new framework for understanding the concept of a life well-lived in an era of digital eternity. We must grapple with the psychological implications of living in an environment devoid of traditional entropy, where beauty is static. This leads to the question of whether the human spirit requires struggle and decay to find true meaning and purpose. Artificially introducing narrative friction and digital entropy into these worlds is a way to ground our experiences in a familiar reality. Yet, the real technological leap lies in embracing the unique logic of the digital plane as a valid form of reality. This acceptance marks the transition from the imitation phase of technology to the creation phase of the new human species.",
                         "Thirdly, the philosophy of presence must address the collective nature of reality-building and the emergence of inter-subjective consensus through technology. In the physical world, reality is largely a given, dictated by the laws of physics and the consensus of biological senses. In the Metaverse, reality is a collaborative construct that can be modified, shared, and negotiated in real-time by the users. This creates a dynamic reality where the collective will of a community can alter the physical laws of their shared environment. Such power requires a new social contract that prioritizes the preservation of shared truth over individual convenience or profit. We must be wary of the fragmentation of reality into epistemic bubbles where different groups live in logically incompatible universes. The open Metaverse depends on interoperable protocols that ensure a consistent baseline of experience for all its global inhabitants. This consistency is essential for fostering trust and empathy across the digital divide that currently exists in our world. We must treat high-fidelity presence as a fundamental human right, ensuring that no one is excluded based on their status. The democratization of the ideal allows for a global meritocracy where the most innovative minds can shape the digital reality. Ultimately, the philosophy of presence is about the integration of the human reach with the infinite possibilities of the void."
                     ]},
-                    { id: "ch2", title: "2. Generative AI", paragraphs: ["AI is the digital architect that builds trillions of cubic meters of navigable virtual space effortlessly for billions of users. It interpret human natural language into complex 3D structures, making world-building accessible to non-technical individuals in the upcoming global digital era. Neural networks simulate the laws of physics and the aesthetics of light to create environments indistinguishable from physical reality for the mind. This transition marks the end of manual modeling and the beginning of agentic creation where environments are dynamic and ever-changing. Generative AI manages the consistency of the world's social and physical fabric across synchronized server instances in the global cloud. It populates these vast spaces with intelligent NPCs that can learn from user interactions and evolve their own behaviors over time. Content creation at scale becomes a solved problem, allowing the human imagination to become the only real constraint in production. Security and moderation in these 3D spaces are handled by real-time AI agents that detect harmful patterns and anomalies. The fusion of AI and Metaverse is not a choice but a technical necessity for a persistent and functional ecosystem. Ultimately, AI empowers every citizen of the Metaverse to be an architect of their own unique and personalized universe."] },
-                    { id: "ch3", title: "3. BCI Leap", paragraphs: ["Brain-Computer Interfaces represent the ultimate frontier of human immersion by bypassing the biological limitations of our natural sense organs. Current VR is constrained by the bandwidth of eyes and ears, but BCI injects data directly into the neural pathways. This technology achieves the 'feeling of reality' by creating direct neural resonance that is indistinguishable from physical sensations for the brain. We are moving from external displays to internal experiences where the mind and the machine operate as a single cognitive unit. High-density micro-electrode arrays and optogenetics allow for surgical precision in targeting specific clusters of neurons for deep sensory injection. Non-invasive wearable versions are being developed to bring this sensory leap to the mass consumer market without surgical risks. Telepathic communication becomes possible as brain signals are decoded and transmitted across the network in the form of pure concepts. Neuro-haptics provide the missing layer of physicality by simulating weight and texture directly in the somatosensory cortex of the observer. The integration of BCI with the Metaverse engages the entire human nervous system, making the digital world feel as solid as earth. This sensory revolution will redefine what it means to be human in a technologically augmented and persistent digital era."] },
-                    { id: "ch4", title: "4. 6G Infrastructure", paragraphs: ["6G infrastructure..."] },
-                    { id: "ch5", title: "5. Digital Economy", paragraphs: ["Metaverse economy..."] },
-                    { id: "ch6", title: "6. Fluid Identity", paragraphs: ["Fluid identity..."] },
-                    { id: "ch7", title: "7. Digital Ethics", paragraphs: ["Digital ethics..."] },
-                    { id: "ch8", title: "8. Art & Creativity", paragraphs: ["Art & Creativity..."] },
-                    { id: "ch9", title: "9. Law & Sovereignty", paragraphs: ["Law & Sovereignty..."] },
-                    { id: "ch10", title: "10. Final Synthesis", paragraphs: ["Final synthesis..."] }
+                    { id: "ch2", title: "2. Generative AI", paragraphs: [
+                        "Artificial Intelligence has evolved into the master architect of the virtual landscape, utilizing deep learning to construct trillions of cubic meters of navigable space. In the coming decade, we will witness a transition where world-building becomes as intuitive as speaking, thanks to high-level interpretive neural networks. These AI entities don't merely place static assets; they manage the complex physics and environmental logic of the ecosystem in real-time. This democratization of creation empowers every single inhabitant to manifest their imagination into a tangible three-dimensional reality for all. Agentic AI acts as the silent moderator of social interactions, ensuring that community norms are upheld across billions of synchronized server instances globally. We are moving toward a state where content creation at a massive scale is no longer a human bottleneck but an automated process. The fusion of AI and 3D rendering allows for a visual fidelity that fills the 'uncanny valley' and creates perfect immersion. Every NPC in this world will possess a unique history and personality, evolving dynamically through its interactions with the human users. Ultimately, AI provides the structural integrity and creative energy required to sustain a functional and infinite digital civilization today. This partnership between human intent and machine execution is the defining technological leap of the digital architect era.",
+                        "Technical rendering systems are now moving toward neural rendering pipelines that bypass the traditional limitations of rasterization and ray-tracing calculations. By storing environmental information in neural weights, we can achieve photorealistic lighting and complex textures with a fraction of the traditional computational cost. This breakthrough ensures that high-fidelity Metaverse experiences are accessible on low-power mobile devices, bridging the global digital divide. We are also seeing the rise of automated asset generation, where AI creates optimized 3D models from simple 2D descriptions or sketches. This efficiency allows for the rapid expansion of virtual cities and ecosystems without the need for massive human modeling teams. Procedural life algorithms ensure that digital nature is non-repetitive, mirroring the diversity and complexity of biological systems found on Earth. Every sunset, every forest path, and every architectural detail is a unique manifestation of the AI's deep understanding of aesthetics. This level of automation solves the 'content desert' problem, keeping the Metaverse fresh and engaging for long-term inhabitants. We are building a synthetic world that breathes, grows, and reacts to its occupants with a level of detail that was previously unimaginable. Generative AI is not just a tool; it is the heartbeat of the digital environment's constant evolution.",
+                        "AI also serves as the critical layer of identity management and social safety in highly populated virtual environments containing billions of avatars. Machine vision and real-time behavioral analysis systems monitor data streams to prevent fraud, harassment, and the creation of deceptive digital clones. We are witnessing the rise of 'agentic twins,' AI-driven representations of users that can manage tasks and social presence even while the user is offline. These twins learn from user preferences and ethics to ensure that their autonomous actions remain consistent with the human's true intent. However, this raises profound questions about authenticity and the sovereignty of the individual in a world of perfect simulations. We must implement transparent algorithmic protocols to ensure that AI serves the user's best interests rather than corporate profitability goals. The ethical architecture of AI is just as important as its creative power for the future of our digital civilization's social cohesion. Protecting the human mind from algorithmic 'nudging' and subconscious manipulation is the primary political struggle of the new era. Ultimately, AI must be an engine for human empowerment, expanding our capabilities without compromising our fundamental values and agency. The Metaverse is a test of our ability to govern the immense power of artificial intelligence with wisdom and foresight."
+                    ]},
+                    { id: "ch3", title: "3. BCI Leap", paragraphs: ["Brain-Computer Interfaces (BCI) mark the ultimate sensory frontier..."] },
+                    { id: "ch4", title: "4. 6G Infrastructure", paragraphs: ["6G network infrastructure..."] },
+                    { id: "ch5", title: "5. Digital Economy", paragraphs: ["The Metaverse economy..."] },
+                    { id: "ch6", title: "6. Fluid Identity", paragraphs: ["Psychology of identity..."] },
+                    { id: "ch7", title: "7. Digital Ethics", paragraphs: ["Ethical frameworks..."] },
+                    { id: "ch8", title: "8. Art & Creativity", paragraphs: ["Artistic expression..."] },
+                    { id: "ch9", title: "9. Law & Sovereignty", paragraphs: ["Legal governance..."] },
+                    { id: "ch10", title: "10. Final Synthesis", paragraphs: ["Final conclusion..."] }
                 ]
             },
             tr: {
@@ -143,7 +167,7 @@
                     { id: "ch1", title: "۱. فلسفه حضور", paragraphs: [
                         "مفهوم حضور در متاورس نشان‌دهنده یک جهش هستی‌شناختی عمیق در تجربه انسانی است که مرزهای میان واقعیت فیزیکی و بازنمایی دیجیتال را به چالش می‌کشد. این پدیده تنها یک شبیه‌سازی گرافیکی نیست بلکه ادغام عملکردی آگاهی در یک اکوسیستم دیجیتالی با فرکانس بالا محسوب می‌شود. ما باید تشخیص دهیم که زیست دیجیتال، شبیه‌سازی واقعیت نیست، بلکه گسترش اراده انسانی به ابعاد نوین است. این انتقال نیازمند بازنگری کامل در مفهوم کوالیا است که محرک‌های الگوریتمیک را جایگزین می‌کند. پلاستیسیته مغز انسان اجازه می‌دهد تا محرک‌های سنتزی را در صورت تطابق الگو به عنوان داده‌های اولیه محیطی بپذیرد. در نتیجه مرز میان فضای فیزیکی و قلمرو مجازی به تدریج تحت تأثیر همزمانی بازخوردها از بین می‌رود. ما شاهد ظهور یک وضعیت انسانی پسا-جغرافیایی هستیم که در آن مفهوم محلی بودن بازتعریف می‌شود. این تغییر مستلزم یک معرفت‌شناسی جدید است که برای اصالت تعامل ارزش والایی قائل است. تجربه ذهنی در فضاهای مجازی با رسیدن حلقه‌های بازخورد حسی به دقت میلی‌ثانیه، واقعی خواهد شد. در نهایت تمدن آینده بر پایه این حضور یکپارچه استوار خواهد بود که فاصله‌ها را حذف می‌کند.",
                         "در مرحله دوم از بررسی فلسفی حضور، ما به ماهیت زمانی در دنیای دیجیتال و پایداری داده‌ها می‌پردازیم. در متاورس هر رخداد به صورت یک کد ماندگار در شبکه ثبت می‌شود و امکان بازگشت را فراهم می‌کند. این ماندگاری اطلاعات باعث می‌شود تا مفهوم میراث انسانی از خاطرات به معماری‌های قابل پیمایش تبدیل شود. ما باید بیاموزیم که چگونه هویت خود را در محیطی که فاقد آنتروپی بیولوژیک است مدیریت کنیم. نبود زوال ماده در فضای مجازی نوعی کمال ایستا ایجاد می‌کند که چالش‌های روان‌شناختی جدیدی دارد. برای جلوگیری از حس غریبگی ذهن، باید فرسودگی‌های دیجیتال به صورت عمدی در طراحی‌ها گنجانده شوند. پذیرش منطق دیجیتال به عنوان یک واقعیت مستقل نشان‌دهنده بلوغ تمدن ما در این عصر است. ما از مرحله تقلید از طبیعت عبور کرده‌ایم و اکنون به مرحله اصلاح قوانین حاکم بر واقعیت رسیده‌ایم. متافیزیک متاورس در لایه‌های کد نهفته است که به تدریج جایگزین اتم‌ها در تعریف حقیقت می‌شوند. همگرایی میان تجربه مستقیم و واسطه‌مند غایت اصلی این فلسفه نوین در قرن بیست و یکم است.",
-                        "بُعد سوم این فلسفه بر دموکراتیزه کردن ایده‌آل و حذف نایابی فیزیکی به عنوان مانعی بزرگ تمرکز دارد. در متاورس ساخت یک شاهکار معماری جهانی هزینه‌ای بیشتر از یک کلبه ساده ندارد و تخیل حاکم است. این توزیع مجدد قدرت خلاقه اجازه می‌دهد تا یک شایسته‌سالاری جهانی بدون توجه به ثروت شکل بگیرد. دسترسی به حضور با کیفیت بالا باید در عصر دیجیتال به عنوان یک حق بنیادین بشری شناخته شود. اگر متاورس به جزیره‌های محصور شرکتی تقسیم شود، ایده وحدت تجربه بشری به خطر می‌افزاید. این قطعه‌قطعه شدن حقیقت، خطرناک‌ترین چالش پیش روی تمدن دیجیتال است که باید با پروتکل باز حل شود. حاکمیت خودِ دیجیتال نیازمند توانایی حرکت آزادانه میان جهان‌ها با حفظ کامل دارایی‌ها و هویت است. ما همچنین باید نقش طبیعت را در دنیایی از پیکسل‌ها بررسی کنیم تا فواید روان‌شناختی آن را بسنجیم. شواهد علوم اعصاب نشان می‌دهد که مغز به الگوهای طبیعی در هر دو محیط واکنش مشابهی نشان می‌دهد. در نهایت فلسفه حضور به دنبال گسترش دسترسی انسان به ابعاد جدید وجودی بدون محدودیت‌های مادی است."
+                        "بُعد سوم این فلسفه بر دموکراتیزه کردن ایده‌آل و حذف نایابی فیزیکی به عنوان مانعی بزرگ تمرکز دارد. در متاورس ساخت یک شاهکار معماری جهانی هزینه‌ای بیشتر از یک کلبه ساده ندارد و تخیل حاکم است. این توزیع مجدد قدرت خلاقه اجازه می‌دهد تا یک شایسته‌سالاری جهانی بدون توجه به ثروت فیزیکی افراد شکل بگیرد. دسترسی به حضور با کیفیت بالا باید در عصر دیجیتال به عنوان یک حق بنیادین بشری شناخته شود. اگر متاورس به جزیره‌های محصور شرکتی تقسیم شود، ایده وحدت تجربه بشری به خطر می‌افزاید. این قطعه‌قطعه شدن حقیقت، خطرناک‌ترین چالش پیش روی تمدن دیجیتال است که باید با پروتکل باز حل شود. حاکمیت خودِ دیجیتال نیازمند توانایی حرکت آزادانه میان جهان‌ها با حفظ کامل دارایی‌ها و هویت است. ما همچنین باید نقش طبیعت را در دنیایی از پیکسل‌ها بررسی کنیم تا فواید روان‌شناختی آن را بسنجیم. شواهد علوم اعصاب نشان می‌دهد که مغز به الگوهای طبیعی در هر دو محیط واکنش مشابهی نشان می‌دهد. در نهایت فلسفه حضور به دنبال گسترش دسترسی انسان به ابعاد جدید وجودی بدون محدودیت‌های مادی است."
                     ]},
                     { id: "ch2", title: "۲. هوش مصنوعی مولد", paragraphs: ["AI..."] },
                     { id: "ch3", title: "۳. رابط‌های مغز و رایانه", paragraphs: ["BCI..."] },
@@ -229,7 +253,7 @@
 
             return (
                 <div className="flex min-h-screen relative">
-                    {/* Mobile Header */}
+                    {/* Mobile Menu Toggle (Simplified) */}
                     <div className="lg:hidden fixed top-0 left-0 w-full glass-panel z-[60] flex justify-between items-center p-4">
                         <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="p-2 text-[#deff9a]">
                             {isSidebarOpen ? <IconX /> : <IconMenu />}
@@ -239,9 +263,22 @@
 
                     {/* Sidebar */}
                     <aside className={`w-80 glass-panel h-screen fixed top-0 flex flex-col p-8 z-50 transition-all duration-500 sidebar-mobile ${isSidebarOpen ? 'open' : ''} ${lang === 'fa' ? 'right-0 lg:border-l' : 'left-0 lg:border-r'} lg:translate-x-0`}>
-                        <div className="mb-10 pt-12 lg:pt-0">
+                        <div className="mb-8 pt-12 lg:pt-0">
                             <h1 className="text-2xl font-black gradient-text tracking-tighter leading-tight">{current.title}</h1>
                             <p className="text-gray-500 text-[10px] mt-2 font-bold uppercase tracking-widest">{current.author}</p>
+                        </div>
+
+                        {/* Language Switcher MOVED TO SIDEBAR */}
+                        <div className="mb-8 flex gap-1 bg-white/5 p-1 rounded-2xl">
+                            {['fa', 'tr', 'en'].map(l => (
+                                <button 
+                                    key={l} 
+                                    onClick={() => toggleLang(l)} 
+                                    className={`flex-1 py-2 rounded-xl text-[10px] font-black uppercase transition-all ${lang === l ? 'bg-[#deff9a] text-black shadow-md' : 'text-gray-500 hover:text-white'}`}
+                                >
+                                    {l}
+                                </button>
+                            ))}
                         </div>
                         
                         <nav className="flex-grow overflow-y-auto space-y-1 custom-scroll pr-2 pl-2">
@@ -274,33 +311,26 @@
                     {/* Main Content Area */}
                     <main className={`flex-grow p-6 md:p-12 lg:p-20 transition-all duration-500 ${lang === 'fa' ? 'lg:mr-80' : 'lg:ml-80'} pt-24 lg:pt-20`}>
                         <div className="page-container">
-                            <header className="hidden lg:flex justify-between items-center mb-20 glass-panel p-4 rounded-3xl sticky top-4 z-40">
-                                <div className="flex gap-2">
-                                    {['fa', 'tr', 'en'].map(l => (
-                                        <button key={l} onClick={() => toggleLang(l)} className={`px-5 py-2 rounded-xl text-[10px] font-black uppercase transition-all ${lang === l ? 'bg-[#deff9a] text-black shadow-md shadow-lime-400/20' : 'text-gray-500 hover:text-white'}`}>{l}</button>
-                                    ))}
-                                </div>
-                                <div className="text-[10px] font-bold text-gray-500 tracking-widest uppercase">
-                                    {lang === 'fa' ? 'فرامرز کوثری | ۱۴۰۱' : `Faramarz Kowsari | 2022`}
-                                </div>
-                            </header>
-
                             <article className="animate-in fade-in slide-in-from-bottom-4 duration-700">
                                 {current.chapters.filter(ch => ch.id === activeChapterId).map(ch => (
                                     <div key={ch.id}>
                                         <h2 className="text-3xl md:text-5xl font-black mb-8 lg:mb-12 gradient-text tracking-tighter leading-tight">{ch.title}</h2>
                                         
-                                        {/* ISBN & Barcode officially inside Chapter 1 (Acting as cover info) */}
                                         {activeChapterId === 'ch1' && (
                                             <div className="mb-12 lg:mb-16 p-6 lg:p-10 glass-panel rounded-[2rem] lg:rounded-[3.5rem] border border-[#deff9a]/10">
                                                 <div className="flex flex-col md:flex-row gap-8 items-center justify-between">
-                                                    <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-2xl border border-white/5">
-                                                        <img src="images/img01.png" className="w-full h-auto" alt="Book Cover" />
+                                                    <div className="w-full md:w-1/2 rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-black/40">
+                                                        <img 
+                                                            src="images/img01.png" 
+                                                            className="w-full h-auto object-cover" 
+                                                            alt="Book Cover"
+                                                            onError={(e) => { e.target.src = 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=800&q=80'; }}
+                                                        />
                                                     </div>
                                                     <div className="flex flex-col items-center md:items-end gap-4">
-                                                        <div className="text-right">
+                                                        <div className={`${lang === 'fa' ? 'text-right' : 'text-left'} md:text-right`}>
                                                             <p className="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">{current.pubDetails}</p>
-                                                            <p className="text-sm font-bold text-white mb-4">{current.isbn}</p>
+                                                            <p className="text-sm font-bold text-white mb-4 font-mono">{current.isbn}</p>
                                                         </div>
                                                         <div className="bg-white p-3 rounded-lg shadow-xl">
                                                             <Barcode />
@@ -321,6 +351,10 @@
                                     </div>
                                 ))}
                             </article>
+
+                            <footer className="mt-32 pt-16 border-t border-white/5 text-center opacity-40">
+                                <p className="text-xs font-bold tracking-widest uppercase">Metaverse Leaps &copy; 2022</p>
+                            </footer>
                         </div>
                     </main>
 
@@ -332,7 +366,7 @@
                             </button>
                             {lang !== 'fa' && (
                                 <div className="pr-4 border-r border-white/10 hidden md:block">
-                                    <p className="text-[10px] font-black uppercase text-[#deff9a] tracking-tighter">AI Narration</p>
+                                    <p className="text-[9px] font-black uppercase text-[#deff9a] tracking-tighter">AI Narration</p>
                                     <div className="flex items-center gap-2 mt-1">
                                         <IconVolume />
                                         <div className="w-16 md:w-20 h-1 bg-white/10 rounded-full overflow-hidden"><div className="h-full bg-[#deff9a] w-2/3"></div></div>
